@@ -13,7 +13,5 @@ database.connect();
 const urlController = new URLController_1.URLController();
 api.post('/shorten', urlController.shorten);
 api.get('/:hash', urlController.redirect);
-api.listen(5000, () => {
-    console.log('Express listenning');
-});
+api.listen(5000, () => console.log('Express listening'));
 //# sourceMappingURL=index.js.map

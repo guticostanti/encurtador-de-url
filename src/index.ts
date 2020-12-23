@@ -1,4 +1,3 @@
-import { MongoConnection } from 'database/MongoConnection'
 import express from 'express'
 import { URLController } from './controller/URLController'
 import { MongoConnection } from './database/MongoConnection'
