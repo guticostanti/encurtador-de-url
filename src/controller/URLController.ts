@@ -13,4 +13,17 @@ export class URLController {
         // Retornar a URL que a gente salvou
         response.json({ originURL, hash, shortURL })
     }
+
+    public async redirect(req: Request, response: Response): Promise<void> {
+        // Pegar hash da URL
+        const { hash } = req.params
+        // Encontrar a URL original pelo hash
+        const url = {
+            originURL: "https://cloud.mongodb.com/v2/5fe280b72da2f11fa23ffc67#clusters",
+            hash: "nh72KXPJ9",
+            shortURL: "http://localhost:5000/nh72KXPJ9",
+        }
+        // Redirecionar para a URL original a partir do que encontramos no DB
+        response.redirect(url.originURL)
+    }
 }

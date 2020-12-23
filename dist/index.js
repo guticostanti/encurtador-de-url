@@ -9,6 +9,7 @@ const api = express_1.default();
 api.use(express_1.default.json());
 const urlController = new URLController_1.URLController();
 api.post('/shorten', urlController.shorten);
+api.get('/:hash', urlController.redirect);
 api.listen(5000, () => {
     console.log('Express listenning');
 });
